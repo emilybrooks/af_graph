@@ -1,17 +1,27 @@
 # AF Decompilation FAQ
 
 ## What is Animal Forest?
-It's the N64 version of Animal Crossing. It's original title was Doubutsu no Mori, and was released exclusively in Japan. It was ported to GameCube 8 months later as Doubutsu no Mori +, which was used as the basis for the English localization.
+The GameCube title Animal Crossing actually has many different versions released across multiple platforms and regions.
 
-## Why is this a part of ZeldaRET?
-Animal Forest is built off the Ocarina of Time and Majora's Mask codebase, and the same knowledge gained from decompiling those games applies to Animal Forest as well.
+- Apr. 2001 - Doubutsu no Mori (N64)
+- Dec. 2001 - Doubutsu no Mori + (GameCube port)
+- 2002 - Animal Crossing (English localization)
+- 2003 - Animal Crossing (Australian release)
+- Jun. 2003 - Doubutsu no Mori e+ (adds changes from Animal Crossing back in, and many new features)
+- Sep. 2004 - Animal Crossing (European release)
+- 2006 - Dongwu Senlin (Chinese iQue port, based off Doubutsu no Mori)
+
+This project focuses on decompiling the original N64 release, Doubutsu no Mori (lit. Animal Forest)
 
 ## What about the other versions?
 There is a decomp project for Animal Crossing [here](https://github.com/Prakxo/ac-decomp/).
 
+## Why is this a part of ZeldaRET?
+Animal Forest is built off the Ocarina of Time and Majora's Mask codebase, and the same knowledge gained from decompiling those games applies to Animal Forest as well.
+
 ## How can I contribute?
 There plenty of ways to get involved, such as decompiling functions, documenting assets, or documenting code.
 
-Project discussion happens in our [Discord](https://discord.zelda64.dev) in the `#af-decomp` channel.
-[Setup instructions](https://github.com/zeldaret/af/blob/main/README.md)
-[Contributing guide](https://github.com/zeldaret/af/blob/main/CONTRIBUTING.md)
+- Project discussion happens in our [Discord](https://discord.zelda64.dev) in the `#af-decomp` channel.
+- [Setup instructions](https://github.com/zeldaret/af/blob/main/README.md)
+- [Contributing guide](https://github.com/zeldaret/af/blob/main/CONTRIBUTING.md)
