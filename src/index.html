@@ -1,0 +1,66 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Animal Forest Decompilation</title>
+
+<link rel="stylesheet" href="dist/uPlot.min.css">
+<style>
+    .uplot {
+        display: inline-block;
+    }
+</style>
+</head>
+<body>
+<script src="dist/uPlot.iife.js"></script>
+
+
+<script>
+    function percentValue(self, rawValue) {
+        if (rawValue == null) {
+            return null;
+        }
+        return rawValue.toFixed(2) + "%";
+    }
+
+    let opts =
+    {
+        title: "Animal Forest Code Decompilation Progress",
+        width: 800,
+        height: 400,
+        series:
+        [
+            {},
+            {
+                label: "Code Decompiled",
+                width: 2,
+                stroke: "rgb(255, 99, 132)",
+                value: percentValue,
+            }
+        ],
+        axes:
+        [
+            {},
+            {
+                values: (self, ticks) => ticks.map(rawValue => rawValue.toFixed(0) + "%"),
+            },
+        ],
+    };
+
+
+    let u = new uPlot(opts, null, document.body);
+
+    fetch('https://progress.deco.mp/data/animalforest/jp/?mode=all')
+    .then(v => v.json())
+    .then(result =>
+    {
+        const entries = result['animalforest']['jp']['code'].reverse();
+        u.setData([
+            entries.map(a => a.timestamp),
+            entries.map(a => 100 * (a.measures['all'] / a.measures['all/total'])),
+        ]);
+    });
+
+</script>
+</body>
+</html>
