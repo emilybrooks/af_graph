@@ -5,11 +5,11 @@ The GameCube title Animal Crossing actually has many different versions released
 
 - Apr. 2001 - Doubutsu no Mori (N64)
 - Dec. 2001 - Doubutsu no Mori + (GameCube port)
-- 2002 - Animal Crossing (English localization)
-- 2003 - Animal Crossing (Australian release)
+- Sep. 2002 - Animal Crossing (English localization)
 - Jun. 2003 - Doubutsu no Mori e+ (adds changes from Animal Crossing back in, and many new features)
+- Oct. 2003 - Animal Crossing (Australian release)
 - Sep. 2004 - Animal Crossing (European release)
-- 2006 - Dongwu Senlin (Chinese iQue port, based off Doubutsu no Mori)
+- Jun. 2006 - Dongwu Senlin (Chinese iQue port, based off Doubutsu no Mori)
 
 This project focuses on decompiling the original N64 release, Doubutsu no Mori (lit. Animal Forest)
 
