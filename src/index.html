@@ -14,6 +14,10 @@
 <body>
 <script src="dist/uPlot.iife.js"></script>
 
+<p id="progressAll"></p>
+<p id="progressBoot"></p>
+<p id="progressCode"></p>
+<p id="progressOverlays"></p>
 
 <script>
     function percentValue(self, rawValue) {
@@ -54,11 +58,19 @@
     .then(v => v.json())
     .then(result =>
     {
+        const currentProgress = result['animalforest']['jp']['code'][0];
+        document.getElementById("progressAll").innerHTML = (100 * currentProgress['measures']['all'] / currentProgress['measures']['all/total']).toFixed(2) + "%";
+        document.getElementById("progressBoot").innerHTML = (100 * currentProgress['measures']['boot'] / currentProgress['measures']['boot/total']).toFixed(2) + "%";
+        document.getElementById("progressCode").innerHTML = (100 * currentProgress['measures']['code'] / currentProgress['measures']['code/total']).toFixed(2) + "%";
+        document.getElementById("progressOverlays").innerHTML = (100 * currentProgress['measures']['overlays'] / currentProgress['measures']['overlays/total']).toFixed(2) + "%";
+
         const entries = result['animalforest']['jp']['code'].reverse();
         u.setData([
             entries.map(a => a.timestamp),
             entries.map(a => 100 * (a.measures['all'] / a.measures['all/total'])),
         ]);
+
+        
     });
 
 </script>
