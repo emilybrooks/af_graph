@@ -10,7 +10,7 @@ Animal Crossing has many different versions released across multiple platforms a
 - Jun. 2003 - Doubutsu no Mori e+ (Japanese release with the localization changes from Animal Crossing, and new features)
 - Oct. 2003 - Animal Crossing (Australian release)
 - Sep. 2004 - Animal Crossing (European release)
-- Jun. 2006 - Dongwu Senlin (Chinese localization of Doubutsu no Mori)
+- Jun. 2006 - Dongwu Senlin (iQue, Chinese localization of Doubutsu no Mori)
 
 ## What about the other versions?
 There is a decomp project for Animal Crossing [here](https://github.com/Prakxo/ac-decomp/).
