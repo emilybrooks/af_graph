@@ -9,10 +9,10 @@
 <body>
 <script src="dist/uPlot.iife.js"></script>
 
-<p id="lastUpdated"></p>
-
+<div id="center">
+<p id="lastUpdated">Last updated:</p>
 <div id="code">
-    <table>
+    <table id="codeStats">
     <tr>
         <td>Total</td>
         <td id="codeProgressTotal"></td>
@@ -33,7 +33,7 @@
 </div>
 
 <div id="assets">
-    <table>
+    <table id="assetStats">
         <tr>
             <td>Total</td>
             <td id="assetProgressTotal"></td>
@@ -43,6 +43,7 @@
             <td id="assetProgressObjects"></td>
         </tr>
     </table>
+</div>
 </div>
 
 <script>
@@ -102,8 +103,8 @@ let codeOpts =
         },
         {
             label: "Completion (%)",
+            labelFont: "16px Open Sans",
             scale: "%",
-            labelFont: "16px Segoe UI",
             incrs: [25,],
             values: (self, ticks) => ticks.map(rawValue => rawValue.toFixed(0) + "%"),
         },
@@ -149,8 +150,8 @@ let assetOpts =
         },
         {
             label: "Completion (%)",
+            labelFont: "16px Open Sans",
             scale: "%",
-            labelFont: "16px Segoe UI",
             incrs: [25,],
             values: (self, ticks) => ticks.map(rawValue => rawValue.toFixed(0) + "%"),
         },
