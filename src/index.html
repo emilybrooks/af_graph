@@ -1,48 +1,55 @@
 <!doctype html>
-<html>
+<html lang="en">
 <head>
-<meta charset="utf-8">
-<title>Animal Forest Decompilation</title>
-<link rel="stylesheet" href="dist/uPlot.min.css">
-<link rel="stylesheet" href="style.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width"/>
+    <title>Animal Forest Decompilation</title>
+    <link rel="stylesheet" href="dist/uPlot.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="assets/logo.png"/>
 </head>
 <body>
 <script src="dist/uPlot.iife.js"></script>
 
-<div id="center">
+<div id="wrapper">
+<div id="navBar">
+<a id="titleLink" href="index.html">Animal Forest Decompilation</a>
+<!-- <a href="https://zelda.deco.mp/">ZeldaRET</a>
+<a href="https://github.com/zeldaret/af/">GitHub</a> -->
+</div>
 <p id="lastUpdated">Last updated:</p>
-<div id="code">
-    <table id="codeStats">
-    <tr>
-        <td>Total</td>
-        <td id="codeProgressTotal"></td>
-    </tr>
-    <tr>
-        <td>Boot</td>
-        <td id="codeProgressBoot"></td>
-    </tr>
-    <tr>
-        <td>Code</td>
-        <td id="codeProgressCode"></td>
-    </tr>
-    <tr>
-        <td>Overlays</td>
-        <td id="codeProgressOverlays"></td>
-    </tr>
-    </table>
+<div id="codeGraph" class="progressGraph">    
+    <h2>Decompilation Progress</h2>
+    <div class="progressStats">
+        <p class="progressTotalPercent" id="codeProgressTotal"></p>
+        <table class="progressTable">
+        <tr>
+            <td>Boot</td>
+            <td class="percent" id="codeProgressBoot"></td>
+        </tr>
+        <tr>
+            <td>Code</td>
+            <td class="percent" id="codeProgressCode"></td>
+        </tr>
+        <tr>
+            <td>Overlays</td>
+            <td class="percent" id="codeProgressOverlays"></td>
+        </tr>
+        </table>
+    </div>
 </div>
 
-<div id="assets">
-    <table id="assetStats">
-        <tr>
-            <td>Total</td>
-            <td id="assetProgressTotal"></td>
-        </tr>
-        <tr>
-            <td>Objects</td>
-            <td id="assetProgressObjects"></td>
-        </tr>
-    </table>
+<div id="assetGraph" class="progressGraph">
+    <h2>Asset Analysis Progress</h2>
+    <div class="progressStats">
+        <p class="progressTotalPercent" id="assetProgressTotal"></p>
+        <table class="progressTable">
+            <tr>
+                <td>Objects</td>
+                <td class="percent" id="assetProgressObjects"></td>
+            </tr>
+        </table>
+    </div>
 </div>
 </div>
 
@@ -56,11 +63,17 @@ function percentValue(self, rawValue)
     return rawValue.toFixed(2) + "%";
 }
 
+function getSize()
+{
+    return {
+        width: window.innerWidth,
+        height: window.innerWidth / 2,
+    }
+}
+
 let codeOpts =
 {
-    title: "Code Decompilation Progress",
-    width: 800,
-    height: 400,
+    ...getSize(),
     series:
     [
         {},
@@ -103,7 +116,6 @@ let codeOpts =
         },
         {
             label: "Completion (%)",
-            labelFont: "16px Open Sans",
             scale: "%",
             incrs: [25,],
             values: (self, ticks) => ticks.map(rawValue => rawValue.toFixed(0) + "%"),
@@ -121,9 +133,7 @@ let codeOpts =
 
 let assetOpts =
 {
-    title: "Asset Analysis Progress",
-    width: 800,
-    height: 400,
+    ...getSize(),
     series:
     [
         {},
@@ -150,7 +160,6 @@ let assetOpts =
         },
         {
             label: "Completion (%)",
-            labelFont: "16px Open Sans",
             scale: "%",
             incrs: [25,],
             values: (self, ticks) => ticks.map(rawValue => rawValue.toFixed(0) + "%"),
@@ -166,8 +175,8 @@ let assetOpts =
     },
 };
 
-let codeGraph = new uPlot(codeOpts, null, document.getElementById("code"));
-let assetGraph = new uPlot(assetOpts, null, document.getElementById("assets"));
+let codeGraph = new uPlot(codeOpts, null, document.getElementById("codeGraph"));
+let assetGraph = new uPlot(assetOpts, null, document.getElementById("assetGraph"));
 
 fetch('https://progress.deco.mp/data/animalforest/jp/?mode=all')
 .then(v => v.json())
@@ -202,6 +211,25 @@ fetch('https://progress.deco.mp/data/animalforest/jp/?mode=all')
     assetEntries.map(a => 100 * (a.measures['objects'] / a.measures['objects/total'])),
     ]);
 });
+// function throttle(cb, limit) {
+// 				var wait = false;
+
+// 				return () => {
+// 					if (!wait) {
+// 						requestAnimationFrame(cb);
+// 						wait = true;
+// 						setTimeout(() => {
+// 							wait = false;
+// 						}, limit);
+// 					}
+// 				}
+// 			}
+
+// 			window.addEventListener("resize", throttle(() => codeGraph.setSize(getSize()), 100));
+			// window.addEventListener("resize", e => {
+			// 	codeGraph.setSize(getSize());
+			// });
+
 </script>
 </body>
 </html>

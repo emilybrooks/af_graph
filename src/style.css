@@ -2,12 +2,6 @@
 
 *
 {
-    font-family: "Open Sans", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 600;
-    font-style: normal;
-    font-variation-settings:
-      "wdth" 87.5;
     margin: 0;
     padding: 0;
 }
@@ -23,51 +17,100 @@
       "wdth" 100;
 } */
 
-body
+/* body
 {
     background-attachment: fixed;
     background-image: url("assets/bg.png");
     background-position: 50%;
     background-repeat: no-repeat;
     background-size: cover;
+} */
+
+#wrapper
+{
+    width: 100%;
 }
 
-#center
+
+
+#navBar
 {
-    width: 800px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 0px;
-    margin-bottom: 0px;
-    background-color: white;
-    padding-top: 1px;
+    width: 100%;
+    z-index: 100;
+    background-color: gray;
+}
+
+#titleLink
+{
+    font-family: "Open Sans", sans-serif;
+    font-size: 20px;
+    text-decoration: none;
+    color: black;
+    display: inline-block;
+    padding: 10px;
+    margin-left: 50px;
+}
+
+#titleLink:hover
+{
+    color: gray;
 }
 
 #lastUpdated
 {
-    margin: 10px;
+    font-size: 16px;
+    font-family: "Open Sans", sans-serif;
+    padding-left: 20px;
+    padding-top: 5px;
+    padding-bottom: 20px;
 }
 
-#code
+.progressGraph
 {
-    width: 800px;
-    display: inline-block;
+    height: 500px;
 }
 
-#assets
+.progressGraph h2
 {
-    width: 800px;
-    display: inline-block;
+    font-family: "Open Sans", sans-serif;
+    font-size: 34px;
+    text-align: center;
 }
 
-#codeProgressTotal, #codeProgressBoot, #codeProgressCode, #codeProgressOverlays, #assetProgressTotal, #assetProgressObjects
+.progressStats
 {
-    text-align: right;
-    width: 80px;
+    width: auto;
+    padding: 20px;
+    padding-top: 10px;
 }
 
-table
+.progressTotalPercent
 {
+    font-family: "Open Sans", sans-serif;
+    font-size: 34px;
+    height: 40px;
+    width: 50%;
+    float: left;
+    text-align: center;
+}
+
+.progressTable
+{
+    font-family: "Open Sans", sans-serif;
+    font-size: 15px;
+    width: 150px;
     margin-left: auto;
-    margin-right: 10px;
+    padding-top: 5px;
 }
+
+.percent
+{
+    text-align:right;
+}
+
+
+
+/* .uplot
+{
+    display: none;
+} */
