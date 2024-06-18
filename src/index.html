@@ -11,16 +11,17 @@
 <body>
 <script src="dist/uPlot.iife.js"></script>
 
-<div id="wrapper">
 <div id="navBar">
-<a id="titleLink" href="index.html">Animal Forest Decompilation</a>
-<!-- <a href="https://zelda.deco.mp/">ZeldaRET</a>
-<a href="https://github.com/zeldaret/af/">GitHub</a> -->
+    <img id="logo" src="assets/logo.png">
+    <a id="titleLink" href="index.html">Animal Forest Decompilation</a>
+    <!-- <a href="https://zelda.deco.mp/">ZeldaRET</a>
+        <a href="https://github.com/zeldaret/af/">GitHub</a> -->
 </div>
-<p id="lastUpdated">Last updated:</p>
-<div id="codeGraph" class="progressGraph">    
+
+<div id="wrapper">
+    <div id="codeGraph" class="progressGraph">    
+    <!-- <p id="lastUpdated">Last updated:</p> -->
     <h2>Decompilation Progress</h2>
-    <div class="progressStats">
         <p class="progressTotalPercent" id="codeProgressTotal"></p>
         <table class="progressTable">
         <tr>
@@ -36,7 +37,6 @@
             <td class="percent" id="codeProgressOverlays"></td>
         </tr>
         </table>
-    </div>
 </div>
 
 <div id="assetGraph" class="progressGraph">
@@ -66,7 +66,7 @@ function percentValue(self, rawValue)
 function getSize()
 {
     return {
-        width: window.innerWidth,
+        width: window.innerWidth - 0.04 * window.innerWidth,
         height: window.innerWidth / 2,
     }
 }
@@ -182,8 +182,8 @@ fetch('https://progress.deco.mp/data/animalforest/jp/?mode=all')
 .then(v => v.json())
 .then(result =>
 {
-    const lastUpdated = result['animalforest']['jp']['code'][0]['timestamp'];
-    document.getElementById("lastUpdated").innerHTML = "Last updated: " + new Date(lastUpdated * 1000).toLocaleString();
+    // const lastUpdated = result['animalforest']['jp']['code'][0]['timestamp'];
+    // document.getElementById("lastUpdated").innerHTML = "Last updated: " + new Date(lastUpdated * 1000).toLocaleString();
 
     const codeProgress = result['animalforest']['jp']['code'][0]['measures'];
     document.getElementById("codeProgressTotal").innerHTML = (100 * codeProgress['all'] / codeProgress['all/total']).toFixed(2) + "%";
