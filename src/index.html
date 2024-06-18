@@ -16,11 +16,14 @@
     <li><a href="index.html">Animal Forest Decompilation</a></li>
     <li><a class="extraLink" href="https://zelda.deco.mp/">ZeldaRET</a></li>
     <li><a class="extraLink" href="https://github.com/zeldaret/af/">GitHub</a></li>
+    <li><a class="extraLink" href="">Discord</a></li>
 </ul>
 
 <div id="wrapper">
-    <p>What is this?</p>
-    <p>This is a reverse engineering project to decompile Animal Forest into human-readable and modifiable source code.</p>
+    <div class="description">
+        <h2>What is this?</h2>
+        <p>This is a reverse engineering project to decompile Animal Forest into human-readable and modifiable source code.</p>
+    </div>
     <div id="codeGraph" class="progressGraph">    
     <!-- <p id="lastUpdated">Last updated:</p> -->
     <h2>Decompilation Progress</h2>
@@ -39,20 +42,57 @@
             <td class="percent" id="codeProgressOverlays"></td>
         </tr>
         </table>
-</div>
-
-<div id="assetGraph" class="progressGraph">
-    <h2>Asset Analysis Progress</h2>
-    <div class="progressStats">
-        <p class="progressTotalPercent" id="assetProgressTotal"></p>
-        <table class="progressTable">
-            <tr>
-                <td>Objects</td>
-                <td class="percent" id="assetProgressObjects"></td>
-            </tr>
-        </table>
     </div>
-</div>
+    <div id="assetGraph" class="progressGraph">
+        <h2>Asset Analysis Progress</h2>
+        <div class="progressStats">
+            <p class="progressTotalPercent" id="assetProgressTotal"></p>
+            <table class="progressTable">
+                <tr>
+                    <td>Objects</td>
+                    <td class="percent" id="assetProgressObjects"></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div class="faq">
+        <h2>Frequently Asked Questions:</h2>
+
+        <h3>What exactly is Animal Forest?</h3>
+        <p>It's an N64 game released exclusively in Japan, which was later ported to GameCube and localized as Animal Crossing. Animal Forest is a literal translation of it's Japanese name, Doubutsu no Mori.<p>
+        <p>There were many different versions released across multiple platforms and regions, each with significant changes:</p>
+        <ul>
+            <li>Apr. 2001 - Doubutsu no Mori<br>(N64, Japan)</li>
+            <li>Dec. 2001 - Doubutsu no Mori +<br>(GameCube port, Japan)</li>
+            <li>Sep. 2002 - Animal Crossing<br>(English localization, USA/Canada)</li>
+            <li>Jun. 2003 - Doubutsu no Mori e+<br>(Japanese release with the localization changes from Animal Crossing and new features)</li>
+            <li>Oct. 2003 - Animal Crossing<br>(Australian release)</li>
+            <li>Sep. 2004 - Animal Crossing<br>(European release)</li>
+            <li>Jun. 2006 - Dongwu Senlin<br>(iQue, Chinese localization of Doubutsu no Mori)</li>
+        </ul>
+
+        <h3>What about the other versions?</h3>
+        <p>This decomp focuses only on the N64 version. However, there is a decomp project for Animal Crossing <a href="https://github.com/Prakxo/ac-decomp/">here</a>.</p>
+
+        <h3>I want to help, how can I contribute?</h3>
+        <p>We gladly accept contributions! If you're interested in helping with this project, the first step would be to join our <a href="">discord server</a>. Project discussion happens in the #af-decomp channel.</p>
+        <p><a href="https://github.com/zeldaret/af/blob/main/CONTRIBUTING.md">Contributing guide</a></p>
+
+        <h3>Can this be used for modding?</h3>
+        <p>In the future, yes! Currently there are various obstacles, such as hard coded pointers that make the code unshiftable and limit what can be modified.</p>
+
+        <h3>Why is this a part of ZeldaRET?</h3>
+        <p>Animal Forest is built off the same codebase as Ocarina of Time and Majora's Mask. We can use the knowledge gained from those projects when decompiling Animal Forest.</p>
+
+        <h3>What language was this game written in?</h3>
+        <p>Animal Forest was originally written in C using the C89 standard, and compiled to MIPS assembly language.</p>
+
+        <h3>What compiler was used?</h3>
+        <p>IRIS Development Option (IDO) 7.1</p>
+
+        <h3>What is asset analysis?</h3>
+        <p>N64 ROMs have no filesystem and everything is statically linked together. This includes assets such as textures, vertices, display lists, and animations, which are all combined into unlabeled blobs of data. In order to extract it into human-readable formats, we need to document what this data contains.</p>
+    </div>
 </div>
 
 <script>
@@ -67,9 +107,16 @@ function percentValue(self, rawValue)
 
 function getSize()
 {
+    let newWidth = window.innerWidth - 0.02 * window.innerWidth;
+    let newHeight = window.innerWidth / 2;
+    if (newWidth >= 800)
+    {
+        newWidth = 790;
+        newHeight = 400;
+    }
     return {
-        width: window.innerWidth - 0.04 * window.innerWidth,
-        height: window.innerWidth / 2,
+        width: newWidth,
+        height: newHeight,
     }
 }
 
@@ -213,24 +260,27 @@ fetch('https://progress.deco.mp/data/animalforest/jp/?mode=all')
     assetEntries.map(a => 100 * (a.measures['objects'] / a.measures['objects/total'])),
     ]);
 });
-// function throttle(cb, limit) {
-// 				var wait = false;
 
-// 				return () => {
-// 					if (!wait) {
-// 						requestAnimationFrame(cb);
-// 						wait = true;
-// 						setTimeout(() => {
-// 							wait = false;
-// 						}, limit);
-// 					}
-// 				}
-// 			}
+function throttle(cb, limit)
+{
+    var wait = false;
 
-// 			window.addEventListener("resize", throttle(() => codeGraph.setSize(getSize()), 100));
-			// window.addEventListener("resize", e => {
-			// 	codeGraph.setSize(getSize());
-			// });
+    return () =>
+    {
+        if (!wait)
+        {
+            requestAnimationFrame(cb);
+            wait = true;
+            setTimeout(() =>
+            {
+                wait = false;
+            }, limit);
+        }
+    }
+}
+
+window.addEventListener("resize", throttle(() => codeGraph.setSize(getSize()), 100));
+window.addEventListener("resize", throttle(() => assetGraph.setSize(getSize()), 100));
 
 </script>
 </body>

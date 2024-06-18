@@ -29,7 +29,7 @@ body
 #wrapper
 {
     width: auto;
-    padding: 2vw;
+    padding: 1vw;
 }
 
 .navBar
@@ -55,6 +55,7 @@ body
 .navBar li
 {
     display: inline;
+    margin-right: 30px;
 }
 
 .navBar a
@@ -75,26 +76,46 @@ body
     display: none;
 }
 
-#lastUpdated
+.description
+{
+    font-family: "Open Sans", sans-serif;
+    background-color: white;
+    padding: 10px;
+    max-width: 770px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10px;
+}
+
+.description h2
+{
+    font-size: 28px;
+    text-align: center;
+}
+
+/* #lastUpdated
 {
     font-size: 16px;
     font-family: "Open Sans", sans-serif;
     padding-left: 20px;
     padding-top: 5px;
     padding-bottom: 20px;
-}
+} */
 
 .progressGraph
 {
+    max-width: 790px;
     min-height: 500px;
     background-color: white;
-    padding-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10px;
 }
 
 .progressGraph h2
 {
     font-family: "Open Sans", sans-serif;
-    font-size: 34px;
+    font-size: 28px;
     text-align: center;
 }
 
@@ -120,9 +141,50 @@ body
     text-align:right;
 }
 
-
-
-/* .uplot
+.faq
 {
-    display: none;
-} */
+    font-family: "Open Sans", sans-serif;
+    background-color: white;
+    padding: 10px;
+    max-width: 770px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.faq h2
+{
+    font-size: 26px;
+    margin-bottom: 20px;
+}
+
+.faq h3
+{
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.faq p
+{
+    margin-bottom: 20px;
+}
+
+.faq ul
+{
+    margin-left: 25px;
+}
+
+.faq li
+{
+    margin-bottom: 10px;
+}
+
+@media only screen and (min-width: 800px)
+{
+
+.extraLink
+{
+    display: inline;
+}
+
+
+}
