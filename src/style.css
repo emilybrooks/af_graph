@@ -32,35 +32,47 @@ body
     padding: 2vw;
 }
 
-#navBar
+.navBar
 {
-    width: 100%;
+    width: auto;
     background-color: gray;
+    padding: 15px;
 }
 
 #logo
 {
     height: 48px;
     float: left;
-    padding: 5px;
-    padding-left: 10px;
-    padding-right: 10px;
+    margin-top: -10px;
+    padding-right: 15px;
 }
 
-#titleLink
+.navBar
+{
+    list-style-type: none;
+}
+
+.navBar li
+{
+    display: inline;
+}
+
+.navBar a
 {
     font-family: "Open Sans", sans-serif;
     font-size: 20px;
     text-decoration: none;
     color: black;
-    display: block;
-    padding-top: 15px;
-    padding-bottom: 15px;
 }
 
-#titleLink:hover
+.navBar a:hover
 {
-    color: gray;
+    color: white;
+}
+
+.extraLink
+{
+    display: none;
 }
 
 #lastUpdated
@@ -76,6 +88,7 @@ body
 {
     min-height: 500px;
     background-color: white;
+    padding-top: 10px;
 }
 
 .progressGraph h2
