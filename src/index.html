@@ -24,6 +24,7 @@
         <h2>What is this?</h2>
         <p>This is a reverse engineering project to decompile Animal Forest into human-readable and modifiable source code.</p>
     </div>
+    <div id = "graphs">
     <div id="codeGraph" class="progressGraph">    
     <!-- <p id="lastUpdated">Last updated:</p> -->
     <h2>Decompilation Progress</h2>
@@ -52,8 +53,11 @@
                     <td>Objects</td>
                     <td class="percent" id="assetProgressObjects"></td>
                 </tr>
+                <tr><td class="percentPlaceholder">&nbsp;</td></td>
+                <tr><td class="percentPlaceholder">&nbsp;</td></td>
             </table>
         </div>
+    </div>
     </div>
     <div class="faq">
         <h2>Frequently Asked Questions:</h2>
@@ -91,7 +95,7 @@
         <p>IRIS Development Option (IDO) 7.1</p>
 
         <h3>What is asset analysis?</h3>
-        <p>N64 ROMs have no filesystem and everything is statically linked together. This includes assets such as textures, vertices, display lists, and animations, which are all combined into unlabeled blobs of data. In order to extract it into human-readable formats, we need to document what this data contains.</p>
+        <p>N64 ROMs have no filesystem and everything is statically linked together. This includes assets such as textures, vertices, display lists, and animations, which are all combined into unlabeled blobs of data. In order to extract assets into human-readable formats, we need to document what this data contains.</p>
     </div>
 </div>
 
