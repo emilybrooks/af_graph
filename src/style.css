@@ -20,30 +20,28 @@
 body
 {
     background-attachment: fixed;
-    background-image: url("assets/bg.png");
-    background-position: 50%;
+    background-image: url("assets/bg-fall-evening.png");
+    background-position-x: 50%;
+    background-position-y: 100%;
     background-repeat: no-repeat;
     background-size: cover;
 }
 
 .navBar
 {
-    width: auto;
-    background-color: gray;
+    /* max-width: 770px; */
     padding: 15px;
-}
-
-#logo
-{
-    height: 48px;
-    float: left;
-    margin-top: -10px;
-    margin-right: 15px;
-}
-
-.navBar
-{
     list-style-type: none;
+    margin-left: auto;
+    margin-right: auto;
+    z-index: 10;
+    box-shadow: 0 1px 10px #12214c;
+    position: sticky;
+    top: 0px;
+    /* spring summer fall */
+    background-color: #14504a;
+    /* winter */
+    /* background-color: #104544; */
 }
 
 .navBar li
@@ -51,12 +49,27 @@ body
     display: inline;
 }
 
-.navBar a
+#logo
+{
+    height: 48px;
+    float: left;
+    margin-top: -10px;
+    margin-left: -5px;
+    margin-right: 15px;
+}
+
+#titleLink
 {
     font-family: "Open Sans", sans-serif;
     font-size: 20px;
+}
+
+.navBar a
+{
+    font-family: 'arial';
+    font-size: 16px;
     text-decoration: none;
-    color: black;
+    color: white;
     margin-right: 30px;
 }
 
@@ -81,7 +94,7 @@ body
     font-family: "Open Sans", sans-serif;
     background-color: white;
     padding: 10px;
-    max-width: 770px;
+    max-width: 780px;
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 1vw;
@@ -104,9 +117,9 @@ body
 
 .progressGraph
 {
-    max-width: 790px;
-    min-height: 500px;
-    background-color: white;
+    max-width: 800px;
+    min-height: 440px;
+    background-color: #e0fcff;
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 1vw;
@@ -138,7 +151,7 @@ body
 
 .percent
 {
-    text-align:right;
+    text-align: right;
 }
 
 .percentPlaceholder
@@ -146,12 +159,19 @@ body
     visibility: hidden;
 }
 
+.uplot
+{
+    background-color: white;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .faq
 {
     font-family: "Open Sans", sans-serif;
     background-color: white;
     padding: 10px;
-    max-width: 770px;
+    max-width: 780px;
     margin-left: auto;
     margin-right: auto;
 }
@@ -192,11 +212,23 @@ body
     display: inline;
 }
 
+.progressGraph
+{
+    padding-bottom: 20px;
+}
+
+.uplot
+{
+    padding-top: 40px;
+    border-style: solid;
+    border-width: 5px;
+    border-color: #2c74fb;
+}
 
 }
 
 
-@media only screen and (min-width: 1600px)
+/* @media only screen and (min-width: 1600px)
 {
 
 #wrapper
@@ -226,5 +258,10 @@ body
     margin-right: auto;
 }
 
+.faq
+{
+    max-width: 1570px;
 }
+
+} */
 

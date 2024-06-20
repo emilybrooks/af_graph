@@ -13,7 +13,7 @@
 
 <ul class="navBar">
     <li><img id="logo" src="assets/logo.png"></li>
-    <li><a href="index.html">Animal Forest Decompilation</a></li>
+    <li><a id="titleLink" href="index.html">Animal Forest Decompilation</a></li>
     <li><a class="extraLink" href="https://zelda.deco.mp/">ZeldaRET</a></li>
     <li><a class="extraLink" href="https://github.com/zeldaret/af/">GitHub</a></li>
     <li><a class="extraLink" href="">Discord</a></li>
@@ -112,11 +112,11 @@ function percentValue(self, rawValue)
 function getSize()
 {
     let newWidth = window.innerWidth - 0.02 * window.innerWidth;
-    let newHeight = window.innerWidth / 2;
-    if (newWidth >= 800)
+    let newHeight = window.innerWidth * 0.6;
+    if (window.innerWidth >= 800)
     {
-        newWidth = 790;
-        newHeight = 400;
+        newWidth = 760;
+        newHeight = 350;
     }
     return {
         width: newWidth,
