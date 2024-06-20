@@ -20,7 +20,7 @@
 body
 {
     background-attachment: fixed;
-    background-image: url("assets/bg-fall-evening.png");
+    background-image: url("assets/bg-winter-evening.png");
     background-position-x: 50%;
     background-position-y: 100%;
     background-repeat: no-repeat;
@@ -29,19 +29,15 @@ body
 
 .navBar
 {
-    /* max-width: 770px; */
     padding: 15px;
     list-style-type: none;
     margin-left: auto;
     margin-right: auto;
-    z-index: 10;
-    box-shadow: 0 1px 10px #12214c;
-    position: sticky;
-    top: 0px;
     /* spring summer fall */
     background-color: #14504a;
     /* winter */
     /* background-color: #104544; */
+    box-shadow: 0 1px 10px #12214c;
 }
 
 .navBar li
@@ -93,8 +89,9 @@ body
 {
     font-family: "Open Sans", sans-serif;
     background-color: white;
+    opacity: 90%;
     padding: 10px;
-    max-width: 780px;
+    /* max-width: 780px; */
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 1vw;
@@ -117,7 +114,7 @@ body
 
 .progressGraph
 {
-    max-width: 800px;
+    /* max-width: 800px; */
     min-height: 440px;
     background-color: #e0fcff;
     margin-left: auto;
@@ -128,7 +125,8 @@ body
 .progressGraph h2
 {
     font-family: "Open Sans", sans-serif;
-    font-size: 28px;
+    font-size: 40px;
+    color: #335075;
     text-align: center;
 }
 
@@ -136,6 +134,7 @@ body
 {
     font-family: "Open Sans", sans-serif;
     font-size: 40px;
+    color: #335075;
     height: 50px;
     text-align: center;
 }
@@ -144,6 +143,7 @@ body
 {
     font-family: "Open Sans", sans-serif;
     font-size: 15px;
+    color: #335075;
     width: 130px;
     margin-left: auto;
     margin-right: auto;
@@ -162,6 +162,7 @@ body
 .uplot
 {
     background-color: white;
+    color: black;
     margin-left: auto;
     margin-right: auto;
 }
@@ -204,8 +205,15 @@ body
     margin-bottom: 10px;
 }
 
-@media only screen and (min-width: 800px)
+@media only screen and (min-width: 900px)
 {
+
+.navBar
+{
+    z-index: 10;
+    position: sticky;
+    top: 0px;
+}
 
 .extraLink
 {
@@ -214,15 +222,24 @@ body
 
 .progressGraph
 {
-    padding-bottom: 20px;
+    width: 862px;
+    height:674px;
+    background-color: transparent;
+    background-image: url(assets/graph_window.png);
+    padding-top: 30px;
 }
 
 .uplot
 {
-    padding-top: 40px;
+    padding-top: 20px;
+    margin-top: 10px;
+    background-color: white;
     border-style: solid;
-    border-width: 5px;
-    border-color: #2c74fb;
+    border-color: #2c74fd;
+    border-width: 10px;
+    box-shadow: 2px 2px 5px 0px #12214c;
+    border-radius: 50px;
+    color: #335075;
 }
 
 }
