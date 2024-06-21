@@ -6,7 +6,7 @@
     <title>Animal Forest Decompilation</title>
     <link rel="stylesheet" href="dist/uPlot.min.css">
     <link rel="stylesheet" href="style.css">
-    <link id="season" rel="stylesheet" href="winter.css">
+    <link id="season" rel="stylesheet" href="autumn.css">
     <link rel="icon" type="image/png" href="assets/logo.png"/>
 </head>
 <body>
@@ -105,6 +105,38 @@
 </div>
 
 <script>
+function changeSeason(stylesheet)
+{
+    var season = document.getElementById('season');
+    season.href = stylesheet;
+}
+
+let month = new Date().getMonth();
+switch(month)
+{
+    case 11:
+    case 0:
+    case 1:
+        changeSeason('winter.css');
+        break;
+    case 2:
+    case 3:
+    case 4:
+        changeSeason('spring.css');
+        break;
+    case 5:
+    case 6:
+    case 7:
+        changeSeason('summer.css');
+        break;
+    case 8:
+    case 9: 
+    case 10:
+        changeSeason('autumn.css');
+        break;
+    break;
+}
+
 function formatDate(self, rawValue)
 {
     if (rawValue == null)
@@ -312,12 +344,6 @@ function throttle(cb, limit)
 
 window.addEventListener("resize", throttle(() => codeGraph.setSize(getSize()), 100));
 window.addEventListener("resize", throttle(() => assetGraph.setSize(getSize()), 100));
-
-function changeSeason(stylesheet)
-{
-    var season = document.getElementById('season');
-    season.href = stylesheet;
-}
 
 </script>
 </body>
