@@ -17,15 +17,16 @@
       "wdth" 100;
 } */
 
-body
+/* body
 {
+    background: #14504a url("assets/bg_winter.png");
     background-attachment: fixed;
-    background-image: url("assets/bg-winter-evening.png");
     background-position-x: 50%;
     background-position-y: 100%;
     background-repeat: no-repeat;
     background-size: cover;
-}
+} */
+
 
 .navBar
 {
@@ -33,10 +34,7 @@ body
     list-style-type: none;
     margin-left: auto;
     margin-right: auto;
-    /* spring summer fall */
     background-color: #14504a;
-    /* winter */
-    /* background-color: #104544; */
     box-shadow: 0 1px 10px #12214c;
 }
 
@@ -135,8 +133,9 @@ body
     font-family: "Open Sans", sans-serif;
     font-size: 40px;
     color: #335075;
-    height: 50px;
     text-align: center;
+    height: 50px;
+    margin-top: -10px;
 }
 
 .progressTable
@@ -147,6 +146,7 @@ body
     width: 130px;
     margin-left: auto;
     margin-right: auto;
+    padding-bottom: 5px;
 }
 
 .percent
@@ -222,22 +222,20 @@ body
 
 .progressGraph
 {
-    width: 862px;
-    height:674px;
+    width: 860px;
+    height:672px;
     background-color: transparent;
-    background-image: url(assets/graph_window.png);
+    background-image: url(assets/graph_window.svg);
     padding-top: 30px;
 }
 
 .uplot
 {
-    padding-top: 20px;
-    margin-top: 10px;
     background-color: white;
     border-style: solid;
     border-color: #2c74fd;
     border-width: 10px;
-    box-shadow: 2px 2px 5px 0px #12214c;
+    /* box-shadow: 2px 2px 5px 0px #12214c; */
     border-radius: 50px;
     color: #335075;
 }

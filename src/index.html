@@ -6,6 +6,7 @@
     <title>Animal Forest Decompilation</title>
     <link rel="stylesheet" href="dist/uPlot.min.css">
     <link rel="stylesheet" href="style.css">
+    <link id="season" rel="stylesheet" href="winter.css">
     <link rel="icon" type="image/png" href="assets/logo.png"/>
 </head>
 <body>
@@ -17,6 +18,10 @@
     <!-- <li><a class="extraLink" href="https://zelda.deco.mp/">ZeldaRET</a></li> -->
     <li><a class="extraLink" href="https://github.com/zeldaret/af/">GitHub</a></li>
     <li><a class="extraLink" href="">Discord</a></li>
+    <li><button onclick="changeSeason('spring.css')">Spring</button></li>
+    <li><button onclick="changeSeason('summer.css')">Summer</button></li>
+    <li><button onclick="changeSeason('autumn.css')">Autumn</button></li>
+    <li><button onclick="changeSeason('winter.css')">Winter</button></li>
 </ul>
 
 <div id="wrapper">
@@ -124,8 +129,8 @@ function getSize()
     let newHeight = window.innerWidth * 0.6;
     if (window.innerWidth >= 900)
     {
-        newWidth = 750;
-        newHeight = 320;
+        newWidth = 730;
+        newHeight = 370;
     }
     return {
         width: newWidth,
@@ -180,7 +185,7 @@ let codeOpts =
             grid: {show: false},
         },
         {
-            // label: "Completion (%)",
+            label: "Completion (%)",
             scale: "%",
             incrs: [25,],
             values: (self, ticks) => ticks.map(rawValue => rawValue.toFixed(0) + "%"),
@@ -297,6 +302,12 @@ function throttle(cb, limit)
 
 window.addEventListener("resize", throttle(() => codeGraph.setSize(getSize()), 100));
 window.addEventListener("resize", throttle(() => assetGraph.setSize(getSize()), 100));
+
+function changeSeason(stylesheet)
+{
+    var season = document.getElementById('season');
+    season.href = stylesheet;
+}
 
 </script>
 </body>
