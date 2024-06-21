@@ -15,7 +15,7 @@
 <ul class="navBar">
     <li><img id="logo" src="assets/logo.png"></li>
     <li><a id="titleLink" href="index.html">Animal Forest Decompilation</a></li>
-    <!-- <li><a class="extraLink" href="https://zelda.deco.mp/">ZeldaRET</a></li> -->
+    <li><a class="extraLink" href="https://zelda.deco.mp/">ZeldaRET</a></li>
     <li><a class="extraLink" href="https://github.com/zeldaret/af/">GitHub</a></li>
     <li><a class="extraLink" href="">Discord</a></li>
     <li><button onclick="changeSeason('spring.css')">Spring</button></li>
@@ -25,10 +25,10 @@
 </ul>
 
 <div id="wrapper">
-    <!-- <div class="description">
+    <div class="description">
         <h2>What is this?</h2>
         <p>This is a reverse engineering project to decompile Animal Forest into human-readable and modifiable source code.</p>
-    </div> -->
+    </div>
     <div id = "graphs">
     <div id="codeGraph" class="progressGraph">
     <!-- <p id="lastUpdated">Last updated:</p> -->
@@ -157,7 +157,7 @@ function percentValue(self, rawValue)
 
 function getSize()
 {
-    let newWidth = window.innerWidth - 0.02 * window.innerWidth;
+    let newWidth = window.innerWidth - 0.06 * window.innerWidth;
     let newHeight = window.innerHeight * 0.3;
     if (window.innerWidth >= 900)
     {
@@ -190,7 +190,7 @@ let codeOpts =
             show: false,
             label: "Boot",
             scale: "%",
-            width: 2,
+            width: 3,
             stroke: "rgb(255, 99, 132)",
             value: percentValue,
         },
@@ -198,16 +198,16 @@ let codeOpts =
             show: false,
             label: "Code",
             scale: "%",
-            width: 2,
-            stroke: "rgb(255, 99, 132)",
+            width: 3,
+            stroke: "rgb(82, 146, 252)",
             value: percentValue,
         },
         {
             show: false,
             label: "Overlays",
             scale: "%",
-            width: 2,
-            stroke: "rgb(255, 99, 132)",
+            width: 3,
+            stroke: "rgb(227, 172, 52)",
             value: percentValue,
         },
     ],
@@ -247,15 +247,15 @@ let assetOpts =
         {
             label: "Total",
             scale: "%",
-            width: 2,
-            stroke: "rgb(255, 99, 132)",
+            width: 3,
+            stroke: "rgb(85, 191, 59)",
             value: percentValue,
         },
         {
             show: false,
             label: "Objects",
             scale: "%",
-            width: 2,
+            width: 3,
             stroke: "rgb(255, 99, 132)",
             value: percentValue,
         },
