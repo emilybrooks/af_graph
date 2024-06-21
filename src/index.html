@@ -48,11 +48,11 @@
 </ul>
 
 <div id="wrapper">
-    <div class="description">
+    <!-- <div class="description">
         <h2>What is this?</h2>
-        <p>This is a reverse engineering project to decompile Animal Forest into human-readable and modifiable source code.</p>
-    </div>
-    <div id = "graphs">
+        <p>A reverse engineering project to decompile Animal Forest into human-readable and modifiable source code.</p>
+    </div> -->
+    
     <div id="codeGraph" class="progressGraph">
     <!-- <p id="lastUpdated">Last updated:</p> -->
     <h2>Decompilation Progress</h2>
@@ -86,47 +86,65 @@
             </table>
         </div>
     </div>
-    </div>
+    
     <div class="faq">
-        <h2>Frequently Asked Questions:</h2>
+        <h2>What is this?</h2>
+        
+        <div class="faqAnswer">
+        <p>A reverse engineering project to decompile Animal Forest into human-readable and modifiable source code.</p>
+        </div>
 
-        <h3>What exactly is Animal Forest?</h3>
-        <p>It's an N64 game released exclusively in Japan, which was later ported to GameCube and localized as Animal Crossing. Animal Forest is a literal translation of it's Japanese name, Doubutsu no Mori.<p>
+        <h2>What exactly is Animal Forest?</h2>
+
+        <div class="faqAnswer">
+        <p>It's an N64 game that was only released in Japan, it was later ported to the GameCube and localized as Animal Crossing. Animal Forest is a literal translation of it's Japanese name, Doubutsu no Mori.<p>
         <p>There were many different versions released across multiple platforms and regions, each with significant changes:</p>
         <ul>
-            <li>Apr. 2001 - Doubutsu no Mori<br>(N64, Japan)</li>
-            <li>Dec. 2001 - Doubutsu no Mori +<br>(GameCube port, Japan)</li>
-            <li>Sep. 2002 - Animal Crossing<br>(English localization, USA/Canada)</li>
-            <li>Jun. 2003 - Doubutsu no Mori e+<br>(Japanese release with the localization changes from Animal Crossing and new features)</li>
-            <li>Oct. 2003 - Animal Crossing<br>(Australian release)</li>
-            <li>Sep. 2004 - Animal Crossing<br>(European release)</li>
-            <li>Jun. 2006 - Dongwu Senlin<br>(iQue, Chinese localization of Doubutsu no Mori)</li>
+            <li>Apr. 2001 - Doubutsu no Mori (N64, Japan)</li>
+            <li>Dec. 2001 - Doubutsu no Mori + (GameCube port, Japan)</li>
+            <li>Sep. 2002 - Animal Crossing (English localization, USA/Canada)</li>
+            <li>Jun. 2003 - Doubutsu no Mori e+ (Japanese release of the localization)</li>
+            <li>Oct. 2003 - Animal Crossing (Australian release)</li>
+            <li>Sep. 2004 - Animal Crossing (European release)</li>
+            <li>Jun. 2006 - Dongwu Senlin (iQue, Chinese localization)</li>
         </ul>
 
-        <h3>What about the other versions?</h3>
-        <p>This decomp focuses only on the N64 version. However, there is a decomp project for Animal Crossing <a href="https://github.com/Prakxo/ac-decomp/">here</a>.</p>
+        <p>There is <a href="https://github.com/Prakxo/ac-decomp/">another project</a> that is working on the English GameCube version.</p>
+        </div>
 
-        <h3>I want to help, how can I contribute?</h3>
-        <p>We gladly accept contributions! If you're interested in helping with this project, the first step would be to join our <a href="">discord server</a>. Project discussion happens in the #af-decomp channel.</p>
-        <p><a href="https://github.com/zeldaret/af/blob/main/CONTRIBUTING.md">Contributing guide</a></p>
+        <h2>Can this be used for modding?</h2>
 
-        <h3>Can this be used for modding?</h3>
-        <p>In the future, yes! Currently there are various obstacles, such as hard coded pointers that make the code unshiftable and limit what can be modified.</p>
+        <div class="faqAnswer">
+        <p>In the future, yes! However the project is still in it's early stages and there are currently some obstacles that limit what can be modified.</p>
+        </div>
+        
+        <h2>Why is this a part of ZeldaRET?</h2>
 
-        <h3>Why is this a part of ZeldaRET?</h3>
-        <p>Animal Forest is built off the same codebase as Ocarina of Time and Majora's Mask. We can use the knowledge gained from those projects when decompiling Animal Forest.</p>
+        <div class="faqAnswer">
+        <p>Animal Forest is built off the same codebase as Ocarina of Time and Majora's Mask, and contributors from those projects were interested in working on it.</p>
+        </div>
+        
+        <h2>What language was Animal Forest written in?</h2>
 
-        <h3>What language was this game written in?</h3>
+        <div class="faqAnswer">
         <p>Animal Forest was originally written in C using the C89 standard, and compiled to MIPS assembly language.</p>
+        </div>
 
-        <h3>What compiler was used?</h3>
+        <h2>What compiler did it use?</h2>
+        
+        <div class="faqAnswer">
         <p>IRIS Development Option (IDO) 7.1</p>
+        </div>
 
-        <h3>What is asset analysis?</h3>
-        <p>N64 ROMs have no filesystem and everything is statically linked together. This includes assets such as textures, vertices, display lists, and animations, which are all combined into unlabeled blobs of data. In order to extract assets into human-readable formats, we need to document what this data contains.</p>
+        <h2>What is asset analysis?</h2>
+        
+        <div class="faqAnswer">
+        <p>N64 ROMs have no filesystem, and everything is statically linked together. This includes assets such as textures, vertices, display lists, and animations, which were all compiled into unlabeled blobs of data. In order to extract assets into human-readable formats, we need to document what this data contains.</p>
+        </div>
     </div>
 </div>
 
+<!-- <script src="progress.js"></script> -->
 <script>
 function toggleHamburger()
 {
@@ -172,222 +190,7 @@ switch(month)
         break;
     break;
 }
-
-// function formatDate(self, rawValue)
-// {
-//     if (rawValue == null)
-//     {
-//         return null;
-//     }
-//     return new Date(rawValue * 1000).toLocaleDateString();
-// }
-
-// function percentValue(self, rawValue)
-// {
-//     if (rawValue == null)
-//     {
-//         return null;
-//     }
-//     return rawValue.toFixed(2) + "%";
-// }
-
-// function getSize()
-// {
-//     // mobile layout
-//     let newWidth = window.innerWidth - 0.06 * window.innerWidth;
-//     let newHeight = newWidth / 2;
-//     // min height
-//     if (newHeight < 300)
-//     {
-//         newHeight = 300;
-//     }
-//     // full layout
-//     if (window.innerWidth >= 900)
-//     {
-//         newWidth = 730;
-//         newHeight = 370;
-//     }
-//     return {
-//         width: newWidth,
-//         height: newHeight,
-//     }
-// }
-
-// let codeOpts =
-// {
-//     ...getSize(),
-//     series:
-//     [
-//         {
-//             label: "Date",
-//             value: formatDate,
-//         },
-//         {
-//             label: "Total",
-//             scale: "%",
-//             width: 3,
-//             stroke: "rgb(85, 191, 59)",
-//             value: percentValue,
-//         },
-//         {
-//             show: false,
-//             label: "Boot",
-//             scale: "%",
-//             width: 3,
-//             stroke: "rgb(255, 99, 132)",
-//             value: percentValue,
-//         },
-//         {
-//             show: false,
-//             label: "Code",
-//             scale: "%",
-//             width: 3,
-//             stroke: "rgb(82, 146, 252)",
-//             value: percentValue,
-//         },
-//         {
-//             show: false,
-//             label: "Overlays",
-//             scale: "%",
-//             width: 3,
-//             stroke: "rgb(227, 172, 52)",
-//             value: percentValue,
-//         },
-//     ],
-//     axes:
-//     [
-//         {
-//             grid: {show: false},
-//         },
-//         {
-//             // label: "Completion (%)",
-//             scale: "%",
-//             incrs: [25,],
-//             values: (self, ticks) => ticks.map(rawValue => rawValue.toFixed(0) + "%"),
-//             grid:
-//             {
-//                 stroke: "rgb(182, 235, 253)",
-//                 width: 3,
-//             },
-//         },
-//     ],
-//     scales:
-//     {
-//         "%":
-//         {
-//             auto: true,
-//             range: [0, 100],
-//         }
-//     },
-// };
-
-// let assetOpts =
-// {
-//     ...getSize(),
-//     series:
-//     [
-//         {},
-//         {
-//             label: "Total",
-//             scale: "%",
-//             width: 3,
-//             stroke: "rgb(85, 191, 59)",
-//             value: percentValue,
-//         },
-//         {
-//             show: false,
-//             label: "Objects",
-//             scale: "%",
-//             width: 3,
-//             stroke: "rgb(255, 99, 132)",
-//             value: percentValue,
-//         },
-//     ],
-//     axes:
-//     [
-//         {
-//             grid: {show: false},
-//         },
-//         {
-//             // label: "Completion (%)",
-//             scale: "%",
-//             incrs: [25,],
-//             values: (self, ticks) => ticks.map(rawValue => rawValue.toFixed(0) + "%"),
-//             grid:
-//             {
-//                 stroke: "rgb(182, 235, 253)",
-//                 width: 3,
-//             },
-//         },
-//     ],
-//     scales:
-//     {
-//         "%":
-//         {
-//             auto: true,
-//             range: [0, 100],
-//         }
-//     },
-// };
-
-// let codeGraph = new uPlot(codeOpts, null, document.getElementById("codeGraph"));
-// let assetGraph = new uPlot(assetOpts, null, document.getElementById("assetGraph"));
-
-// fetch('https://progress.deco.mp/data/animalforest/jp/?mode=all')
-// .then(v => v.json())
-// .then(result =>
-// {
-//     // const lastUpdated = result['animalforest']['jp']['code'][0]['timestamp'];
-//     // document.getElementById("lastUpdated").innerHTML = "Last updated: " + new Date(lastUpdated * 1000).toLocaleString();
-
-//     const codeProgress = result['animalforest']['jp']['code'][0]['measures'];
-//     document.getElementById("codeProgressTotal").innerHTML = (100 * codeProgress['all'] / codeProgress['all/total']).toFixed(2) + "%";
-//     document.getElementById("codeProgressBoot").innerHTML = (100 * codeProgress['boot'] / codeProgress['boot/total']).toFixed(2) + "%";
-//     document.getElementById("codeProgressCode").innerHTML = (100 * codeProgress['code'] / codeProgress['code/total']).toFixed(2) + "%";
-//     document.getElementById("codeProgressOverlays").innerHTML = (100 * codeProgress['overlays'] / codeProgress['overlays/total']).toFixed(2) + "%";
-
-//     const codeEntries = result['animalforest']['jp']['code'].reverse();
-//     codeGraph.setData([
-//         codeEntries.map(a => a.timestamp),
-//         codeEntries.map(a => 100 * (a.measures['all'] / a.measures['all/total'])),
-//         codeEntries.map(a => 100 * (a.measures['boot'] / a.measures['boot/total'])),
-//         codeEntries.map(a => 100 * (a.measures['code'] / a.measures['code/total'])),
-//         codeEntries.map(a => 100 * (a.measures['overlays'] / a.measures['overlays/total'])),
-//     ]);
-
-//     const assetProgress = result['animalforest']['jp']['assets'][0]['measures'];
-//     document.getElementById("assetProgressTotal").innerHTML = (100 * assetProgress['all'] / assetProgress['all/total']).toFixed(2) + "%";
-//     document.getElementById("assetProgressObjects").innerHTML = (100 * assetProgress['objects'] / assetProgress['objects/total']).toFixed(2) + "%";
-    
-//     const assetEntries = result['animalforest']['jp']['assets'].reverse();
-//     assetGraph.setData([
-//     assetEntries.map(a => a.timestamp),
-//     assetEntries.map(a => 100 * (a.measures['all'] / a.measures['all/total'])),
-//     assetEntries.map(a => 100 * (a.measures['objects'] / a.measures['objects/total'])),
-//     ]);
-// });
-
-// function throttle(cb, limit)
-// {
-//     var wait = false;
-
-//     return () =>
-//     {
-//         if (!wait)
-//         {
-//             requestAnimationFrame(cb);
-//             wait = true;
-//             setTimeout(() =>
-//             {
-//                 wait = false;
-//             }, limit);
-//         }
-//     }
-// }
-
-// window.addEventListener("resize", throttle(() => codeGraph.setSize(getSize()), 100));
-// window.addEventListener("resize", throttle(() => assetGraph.setSize(getSize()), 100));
-
 </script>
+
 </body>
 </html>
