@@ -6,22 +6,29 @@
     <title>Animal Forest Decompilation</title>
     <link rel="stylesheet" href="dist/uPlot.min.css">
     <link rel="stylesheet" href="style.css">
-    <link id="season" rel="stylesheet" href="autumn.css">
+    <link id="season" rel="stylesheet" href="">
     <link rel="icon" type="image/png" href="assets/logo.png"/>
 </head>
 <body>
 <script src="dist/uPlot.iife.js"></script>
 
 <ul class="navBar">
-    <li><img id="logo" src="assets/logo.png"></li>
-    <li><a id="titleLink" href="index.html">Animal Forest Decompilation</a></li>
-    <li><a class="extraLink" href="https://zelda.deco.mp/">ZeldaRET</a></li>
+    <!-- <li><img id="logo" src="assets/logo.png"></li> -->
+    <li><a id="titleLink" href="index.html"><img id="logo" src="assets/logo.png">Animal Forest Decompilation</a></li>
     <li><a class="extraLink" href="https://github.com/zeldaret/af/">GitHub</a></li>
-    <li><a class="extraLink" href="">Discord</a></li>
-    <li><button onclick="changeSeason('spring.css')">Spring</button></li>
-    <li><button onclick="changeSeason('summer.css')">Summer</button></li>
-    <li><button onclick="changeSeason('autumn.css')">Autumn</button></li>
-    <li><button onclick="changeSeason('winter.css')">Winter</button></li>
+    <li><a class="extraLink" href="https://zelda64.dev/">ZeldaRET</a></li>
+    <li><a class="extraLink" href="https://discord.com/invite/DqwyCBYKqf/">Discord</a></li>
+    <li id="themeButton"><a class="extraLink">Theme</a>
+    <div id="themeDropdownContents">
+        <ul class="themeList">
+            <li><button onclick="changeSeason('spring.css')">Spring</button></li>
+            <li><button onclick="changeSeason('summer.css')">Summer</button></li>
+            <li><button onclick="changeSeason('autumn.css')">Autumn</button></li>
+            <li><button onclick="changeSeason('winter.css')">Winter</button></li>
+        </ul>
+    </div>
+    </li>
+    <li><button id="hamburger">Menu</button></li>
 </ul>
 
 <div id="wrapper">
