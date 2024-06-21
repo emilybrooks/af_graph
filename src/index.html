@@ -32,17 +32,19 @@
         </ul>
     </div> -->
     </li>
-    <li><button id="hamburger">Menu</button></li>
+    <li><button id="hamburger" onclick="toggleHamburger()">Menu</button></li>
 </ul>
 
-<ul class="hamburgerContents" style="display: none">
+<ul id="hamburgerContents" class="hamburgerClosed">
     <li><a href="https://github.com/zeldaret/af/">GitHub</a></li>
     <li><a href="https://zelda64.dev/">ZeldaRET</a></li>
     <li><a href="https://discord.com/invite/DqwyCBYKqf/">Discord</a></li>
-    <li><a onclick="changeSeason('spring.css')">Spring</a></li>
-    <li><a onclick="changeSeason('summer.css')">Summer</a></li>
-    <li><a onclick="changeSeason('autumn.css')">Autumn</a></li>
-    <li><a onclick="changeSeason('winter.css')">Winter</a></li>
+    <li id="seasonsHamburger">
+        <img src="assets/grass_winter.png" onclick="changeSeason('winter.css')">
+        <img src="assets/grass_autumn.png" onclick="changeSeason('autumn.css')">
+        <img src="assets/grass_summer.png" onclick="changeSeason('summer.css')">
+        <img src="assets/grass_spring.png" onclick="changeSeason('spring.css')">
+    </li>
 </ul>
 
 <div id="wrapper">
@@ -126,6 +128,19 @@
 </div>
 
 <script>
+function toggleHamburger()
+{
+    var menu = document.getElementById("hamburgerContents");
+    if (menu.className === "hamburgerClosed")
+    {
+        menu.className = "hamburgerOpen";
+    }
+    else
+    {
+        menu.className = "hamburgerClosed";
+    }
+}
+
 function changeSeason(stylesheet)
 {
     var season = document.getElementById('season');
