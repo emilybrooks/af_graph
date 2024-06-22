@@ -48,11 +48,6 @@
 </ul>
 
 <div id="wrapper">
-    <!-- <div class="description">
-        <h2>What is this?</h2>
-        <p>A reverse engineering project to decompile Animal Forest into human-readable and modifiable source code.</p>
-    </div> -->
-    
     <div id="codeGraph" class="progressGraph">
     <!-- <p id="lastUpdated">Last updated:</p> -->
     <h2>Decompilation Progress</h2>
@@ -86,63 +81,17 @@
             </table>
         </div>
     </div>
-    
-    <div class="faq">
-        <h2>What is this?</h2>
+
+    <div class="description">
+        <div id="ribbon"></div>
+        <p>Animal Forest is a reverse engineering project to decompile the Nintendo 64 game Doubutsu no Mori into C code. The project also extracts assets such as models, textures, and animations from the ROM. The C code and assets can then be recompiled to create a 1-to-1 ("matching") copy of the game.</p>
         
-        <div class="faqAnswer">
-        <p>A reverse engineering project to decompile Animal Forest into human-readable and modifiable source code.</p>
-        </div>
-
-        <h2>What exactly is Animal Forest?</h2>
-
-        <div class="faqAnswer">
-        <p>It's an N64 game that was only released in Japan, it was later ported to the GameCube and localized as Animal Crossing. Animal Forest is a literal translation of it's Japanese name, Doubutsu no Mori.<p>
-        <p>There were many different versions released across multiple platforms and regions, each with significant changes:</p>
-        <ul>
-            <li>Apr. 2001 - Doubutsu no Mori (N64, Japan)</li>
-            <li>Dec. 2001 - Doubutsu no Mori + (GameCube port, Japan)</li>
-            <li>Sep. 2002 - Animal Crossing (English localization, USA/Canada)</li>
-            <li>Jun. 2003 - Doubutsu no Mori e+ (Japanese release of the localization)</li>
-            <li>Oct. 2003 - Animal Crossing (Australian release)</li>
-            <li>Sep. 2004 - Animal Crossing (European release)</li>
-            <li>Jun. 2006 - Dongwu Senlin (iQue, Chinese localization)</li>
-        </ul>
-
-        <p>There is <a href="https://github.com/Prakxo/ac-decomp/">another project</a> that is working on the English GameCube version.</p>
-        </div>
-
-        <h2>Can this be used for modding?</h2>
-
-        <div class="faqAnswer">
-        <p>In the future, yes! However the project is still in it's early stages and there are currently some obstacles that limit what can be modified.</p>
-        </div>
+        <h2>Why?</h2>
+        <p>Doubutsu no Mori is the starting point of the incredibly successful Animal Crossing series and a historically significant game. By decompiling it, we can learn more about how it was engineered, and what limitations the original developers had to work with. Looking at the source code can help us understand exactly how a game mechanic works, or what causes a glitch to happen.</p>               
         
-        <h2>Why is this a part of ZeldaRET?</h2>
-
-        <div class="faqAnswer">
-        <p>Animal Forest is built off the same codebase as Ocarina of Time and Majora's Mask, and contributors from those projects were interested in working on it.</p>
-        </div>
-        
-        <h2>What language was Animal Forest written in?</h2>
-
-        <div class="faqAnswer">
-        <p>Animal Forest was originally written in C using the C89 standard, and compiled to MIPS assembly language.</p>
-        </div>
-
-        <h2>What compiler did it use?</h2>
-        
-        <div class="faqAnswer">
-        <p>IRIS Development Option (IDO) 7.1</p>
-        </div>
-
-        <h2>What is asset analysis?</h2>
-        
-        <div class="faqAnswer">
-        <p>N64 ROMs have no filesystem, and everything is statically linked together. This includes assets such as textures, vertices, display lists, and animations, which were all compiled into unlabeled blobs of data. In order to extract assets into human-readable formats, we need to document what this data contains.</p>
-        </div>
-    </div>
-</div>
+        <h2>Contribute</h2>
+        <p>Contributions are always welcome! See our <a href="https://github.com/zeldaret/af/blob/main/CONTRIBUTING.md">Contributing Guide</a> for how to get started.</p>
+    </div> 
 
 <!-- <script src="progress.js"></script> -->
 <script>

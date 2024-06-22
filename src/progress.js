@@ -4,6 +4,7 @@ function formatDate(self, rawValue)
     {
         return null;
     }
+
     return new Date(rawValue * 1000).toLocaleDateString();
 }
 
@@ -13,6 +14,7 @@ function percentValue(self, rawValue)
     {
         return null;
     }
+
     return rawValue.toFixed(2) + "%";
 }
 
@@ -21,17 +23,20 @@ function getSize()
     // mobile layout
     let newWidth = window.innerWidth - 0.06 * window.innerWidth;
     let newHeight = newWidth / 2;
+
     // min height
     if (newHeight < 300)
     {
         newHeight = 300;
     }
+
     // full layout
     if (window.innerWidth >= 900)
     {
         newWidth = 730;
         newHeight = 370;
     }
+
     return {
         width: newWidth,
         height: newHeight,
