@@ -83,41 +83,6 @@ body
     margin-right: 5px;
 }
 
-/* #themeDropdownContents
-{
-    display: none;
-    width: 75px;
-    position: absolute;
-    left: 553px;
-    top: 57px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
-}
-
-#themeButton:hover #themeDropdownContents
-{
-    display: block;
-}
-
-.themeList
-{
-    list-style-type: none;
-}
-
-.themeList a
-{
-    width: 100%;
-    height:36px;
-    padding-top: 21px;
-    padding-left: 10px;
-    background-color: #14504a;
-    font-family: 'arial';
-    font-size: 16px;
-    text-decoration: none;
-    text-align: left;
-    color: white;
-} */
-
 #hamburger
 {
     color: transparent;
@@ -190,7 +155,21 @@ body
     padding-left: 1vw;
     padding-right: 1vw;
     padding-top: 1vw;
-    padding-bottom: 24vh;
+    padding-bottom: 1vw
+}
+
+#letterTop
+{
+    width: auto;
+    height: 35px;
+    background-image: url("assets/letter_top.png");
+}
+
+#letterBottom
+{
+    width: auto;
+    height: 35px;
+    background-image: url("assets/letter_bottom.png");
 }
 
 #ribbon
@@ -201,7 +180,7 @@ body
     height: 29px;
     position: absolute;
     margin-left: -34px;
-    margin-top: -55px;
+    margin-top: -20px;
     left: 50%;
 }
 
@@ -210,12 +189,13 @@ body
     font-family: roboto;
     font-size: 17px;
     color: #323c32;
-    /* background-color: #fdfdfd; */
-    background-image: url("assets/letter.svg");
-    padding: 20px;
+    background-color: white;
+    padding-top: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: 1vw;
 }
 
 .description h2
@@ -226,11 +206,6 @@ body
 .description p
 {
     margin-bottom: 30px;
-}
-
-.description p:first-child
-{
-    margin-top: 20px;
 }
 
 .description a
@@ -336,12 +311,33 @@ body
     display: none;
 }
 
+#wrapper
+{
+    padding-bottom: 24vh;
+}
+
+#letterTop, #letterBottom
+{
+    display: none;
+}
+
+#ribbon
+{
+    margin-top: 15px;
+}
+
 .description
 {
+    background-image: url("assets/letter.svg");
     width: 560px;
     height: 407px;
     padding: 70px;
     margin-bottom: 20px;
+}
+
+.description p:first-child
+{
+    margin-top: 20px;
 }
 
 .progressGraph
