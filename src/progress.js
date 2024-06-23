@@ -116,7 +116,10 @@ let assetOpts =
     ...getSize(),
     series:
     [
-        {},
+        {
+            label: "Date",
+            value: formatDate,
+        },
         {
             label: "Total",
             scale: "%",
@@ -163,13 +166,10 @@ let assetOpts =
 let codeGraph = new uPlot(codeOpts, null, document.getElementById("codeGraph"));
 let assetGraph = new uPlot(assetOpts, null, document.getElementById("assetGraph"));
 
-fetch('https://progress.deco.mp/data/animalforest/jp/?mode=all')
+fetch('https://progress.decomp.club/data/animalforest/jp/?mode=all')
 .then(v => v.json())
 .then(result =>
 {
-    // const lastUpdated = result['animalforest']['jp']['code'][0]['timestamp'];
-    // document.getElementById("lastUpdated").innerHTML = "Last updated: " + new Date(lastUpdated * 1000).toLocaleString();
-
     const codeProgress = result['animalforest']['jp']['code'][0]['measures'];
     document.getElementById("codeProgressTotal").innerHTML = (100 * codeProgress['all'] / codeProgress['all/total']).toFixed(2) + "%";
     document.getElementById("codeProgressBoot").innerHTML = (100 * codeProgress['boot'] / codeProgress['boot/total']).toFixed(2) + "%";
