@@ -338,6 +338,7 @@ body
 
 .description
 {
+    background-color: transparent;
     background-image: url(assets/letter.svg);
     width: 560px;
     height: 407px;
