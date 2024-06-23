@@ -22,16 +22,7 @@
     <li><img src="assets/grass_autumn.webp" class="seasonLink" onclick="changeSeason('autumn.css')"></li>
     <li><img src="assets/grass_summer.webp" class="seasonLink" onclick="changeSeason('summer.css')"></li>
     <li><img src="assets/grass_spring.webp" class="seasonLink" onclick="changeSeason('spring.css')"></li>
-    <!-- <li id="themeButton"><a class="extraLink">Theme</a>
-    <div id="themeDropdownContents">
-        <ul class="themeList">
-            <li><a onclick="changeSeason('spring.css')">Spring</a></li>
-            <li><a onclick="changeSeason('summer.css')">Summer</a></li>
-            <li><a onclick="changeSeason('autumn.css')">Autumn</a></li>
-            <li><a onclick="changeSeason('winter.css')">Winter</a></li>
-        </ul>
-    </div> -->
-    </li>
+
     <li><button id="hamburger" onclick="toggleHamburger()">Menu</button></li>
 </ul>
 
@@ -48,8 +39,8 @@
 </ul>
 
 <div id="wrapper">
+
     <div id="codeGraph" class="progressGraph">
-    <!-- <p id="lastUpdated">Last updated:</p> -->
     <h2>Decompilation Progress</h2>
         <p class="progressTotalPercent" id="codeProgressTotal"></p>
         <table class="progressTable">
@@ -67,6 +58,7 @@
         </tr>
         </table>
     </div>
+
     <div id="assetGraph" class="progressGraph">
         <h2>Asset Analysis Progress</h2>
         <div class="progressStats">
@@ -95,7 +87,7 @@
     </div> 
     <div id="letterBottom"></div>
 
-<!-- <script src="progress.js"></script> -->
+<script src="progress.js"></script>
 <script>
 function toggleHamburger()
 {

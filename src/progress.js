@@ -90,7 +90,6 @@ let codeOpts =
             grid: {show: false},
         },
         {
-            // label: "Completion (%)",
             scale: "%",
             incrs: [25,],
             values: (self, ticks) => ticks.map(rawValue => rawValue.toFixed(0) + "%"),
@@ -142,7 +141,6 @@ let assetOpts =
             grid: {show: false},
         },
         {
-            // label: "Completion (%)",
             scale: "%",
             incrs: [25,],
             values: (self, ticks) => ticks.map(rawValue => rawValue.toFixed(0) + "%"),
