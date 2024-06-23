@@ -20,7 +20,7 @@
 
 body
 {
-    background: #14504a url("assets/bg_autumn.png");
+    background: #14504a url("assets/bg_autumn.webp");
     background-attachment: fixed;
     background-position-x: 50%;
     background-position-y: 100%;
@@ -162,20 +162,20 @@ body
 {
     width: auto;
     height: 35px;
-    background-image: url("assets/letter_top.png");
+    background-image: url("assets/letter_top.webp");
 }
 
 #letterBottom
 {
     width: auto;
     height: 35px;
-    background-image: url("assets/letter_bottom.png");
+    background-image: url("assets/letter_bottom.webp");
 }
 
 #ribbon
 {
     display: block;
-    background-image: url("assets/ribbon.png");
+    background-image: url("assets/ribbon.webp");
     width :69px;
     height: 29px;
     position: absolute;
