@@ -9,7 +9,7 @@
 
 body
 {
-    background: #14504a url(assets/bg_autumn.webp);
+    background: #14504a url(website_assets/bg_autumn.webp);
     background-attachment: fixed;
     background-position-x: 50%;
     background-position-y: 100%;
@@ -78,7 +78,7 @@ body
     color: transparent;
     border: 0px;
     background-color: transparent;
-    background-image: url(assets/hamburger.png);
+    background-image: url(website_assets/hamburger.png);
     background-repeat: no-repeat;
     background-position: 50%;
     width: 57px;
@@ -144,21 +144,21 @@ body
 #letterTop
 {
     width: auto;
-    height: 35px;
-    background-image: url(assets/letter_top.webp);
+    height: 34px;
+    background-image: url(website_assets/letter_top.svg);
 }
 
 #letterBottom
 {
     width: auto;
-    height: 35px;
-    background-image: url(assets/letter_bottom.webp);
+    height: 34px;
+    background-image: url(website_assets/letter_bottom.svg);
 }
 
 #ribbon
 {
     display: block;
-    background-image: url(assets/ribbon.webp);
+    background-image: url(website_assets/ribbon.webp);
     width :69px;
     height: 29px;
     position: absolute;
@@ -311,7 +311,7 @@ body
     height:678px;
     border-style: none;
     background-color: transparent;
-    background-image: url(assets/graph_window.svg);
+    background-image: url(website_assets/graph_window.svg);
     padding-top: 25px;
     margin-bottom: 20px;
 }
@@ -339,7 +339,7 @@ body
 .description
 {
     background-color: transparent;
-    background-image: url(assets/letter.svg);
+    background-image: url(website_assets/letter.svg);
     width: 560px;
     height: 407px;
     padding: 70px;
